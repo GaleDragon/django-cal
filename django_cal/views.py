@@ -11,7 +11,13 @@ from django.contrib.syndication.views import add_domain
 import django
 
 
-if add_domain.func_code.co_argcount < 3:
+try:
+    co_argcount = add_domain.func_code.co_argcount
+except AttributeError:
+    co_argcount = add_domain.__code__.co_argcount
+
+
+if co_argcount < 3:
     # Django <= 1.2
     # Source: Django 1.4 django.contrib.syndication.views
     from django.utils.encoding import iri_to_uri
