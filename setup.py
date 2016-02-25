@@ -11,7 +11,7 @@ setup(
     url = 'http://github.com/statesofpop/django-cal',
     license='BSD',
     install_requires=[
-        'python-dateutil < 2.0',  # dateutil (used by vobject) 2+ only works with Python 3
+        'python-dateutil',  # dateutil (used by vobject) 2+ only works with Python 3
         'vobject',
         'Django',
     ],
@@ -22,6 +22,5 @@ setup(
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2 :: Only',
     ],
 )
